@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>North Japan Tourism</title>
+
+    <!-- googleフォント -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- swiper カルーセル -->
+    <!-- SwiperのCSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- SwiperのJS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+
+    <header>
+      <div class="header-container">
+        <div class="logo">
+          <a href="#">
+            <p>NorthJpanTourism</p>
+          </a>
+        </div>
+        <!-- ハンバーガーメニューのボタン -->
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <!-- ドロワーメニュー -->
+        <nav class="drawer-menu" id="drawerMenu">
+          <ul>
+            <li><a href="#">ホーム</a></li>
+            <li><a href="#">ツアー</a></li>
+            <li><a href="#">コラム</a></li>
+            <li><a href="#">ガイド</a></li>
+            <li><a href="#">Language</a></li>
+          </ul>
+        </nav>
+
+      </div>
+      
+    </header>
+    <main class="top_container">
+      <div class="swiper hero-swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="./image/top_oiraseriver.webp" alt="スライド1">
+          </div>
+          <div class="swiper-slide">
+            <img src="./image/top_hirosakijo.webp" alt="スライド2">
+          </div>
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-scrollbar"></div>
+      </div>
+      <section class="tour">
+        <h2>ツアー一覧</h2>
+        <div class="swiper tour-swiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー1">
+              <h3>ツアー1</h3>
+              <p>青森の歴史を巡るツアー</p>
+              <a href="tour-detail.html?id=1">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー2">
+              <h3>ツアー2</h3>
+              <p>十和田湖の自然を満喫するツアー</p>
+              <a href="tour-detail.html?id=2">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー3">
+              <h3>ツアー3</h3>
+              <p>ねぶた祭りを体験するツアー</p>
+              <a href="tour-detail.html?id=3">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー4">
+              <h3>ツアー4</h3>
+              <p>津軽三味線ライブツアー</p>
+              <a href="tour-detail.html?id=4">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー5">
+              <h3>ツアー5</h3>
+              <p>弘前城の桜ツアー</p>
+              <a href="tour-detail.html?id=5">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー6">
+              <h3>ツアー6</h3>
+              <p>八甲田山スノーハイキング</p>
+              <a href="tour-detail.html?id=6">詳細を見る</a>
+            </div>
+            <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー7">
+              <h3>ツアー7</h3>
+              <p>白神山地トレッキング</p>
+              <a href="tour-detail.html?id=7">詳細を見る</a>
+            </div>
+            <!-- <div class="swiper-slide">
+              <img src="./image/top_hirosakijo.webp" alt="ツアー8">
+              <h3>ツアー8</h3>
+              <p>奥入瀬渓流ウォーク</p>
+              <a href="tour-detail.html?id=8">詳細を見る</a>
+            </div> -->
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-button-next"></div>
+        </div>
+        
+      </section>
+
+      <section class="access">
+        <h2>アクセス</h2>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 NorthJpanTourism | All Rights Reserved</p>
+    </footer>
+    
+    <script src="js/main.js"></script>
+  </body>
+</html>

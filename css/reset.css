@@ -1,0 +1,53 @@
+/* グローバルリセット */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+}
+
+/* フォントや行間の基本設定 */
+html {
+	font-size: 100%;
+	line-height: 1.5;
+}
+
+/* リストのスタイルをリセット */
+ul, ol {
+	list-style: none;
+}
+
+/* aタグのデフォルト装飾をリセット */
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+/* テーブルのスタイルを統一 */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* フォーム要素の縦揃えを統一 */
+input, select, button, textarea {
+	font: inherit;
+	vertical-align: middle;
+}
+
+/* hrのデフォルトスタイルを調整 */
+hr {
+	height: 1px;
+	border: none;
+	background-color: #ccc;
+	margin: 1em 0;
+}
+
+/* 強調タグのデフォルトスタイル */
+strong, b {
+	font-weight: bold;
+}
+
+em, i {
+	font-style: italic;
+}
