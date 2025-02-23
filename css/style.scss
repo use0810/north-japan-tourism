@@ -468,7 +468,7 @@ $ham-height: 36px;
 // ========================
 
 .guide {
-	margin-top: 150px;
+	margin-top: 50px;
 	position: relative; 
 	background-image: url("../image/guide_back.jpg"); // ✅ 背景画像を設定
   background-size: cover;
@@ -478,6 +478,9 @@ $ham-height: 36px;
   border-top-left-radius: 100px; // 左上の角を丸く
   border-top-right-radius: 20px; // 右上の角を丸く
   overflow: hidden; // ✅ 子要素がはみ出さないように
+	@include responsive(tablet) {
+    margin-top: 150px;
+  }
 
 	&::before {
     content: "";

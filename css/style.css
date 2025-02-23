@@ -408,7 +408,7 @@ h2 {
 }
 
 .guide {
-  margin-top: 150px;
+  margin-top: 50px;
   position: relative;
   background-image: url("../image/guide_back.jpg");
   background-size: cover;
@@ -417,6 +417,11 @@ h2 {
   border-top-left-radius: 100px;
   border-top-right-radius: 20px;
   overflow: hidden;
+}
+@media (min-width: 768px) {
+  .guide {
+    margin-top: 150px;
+  }
 }
 .guide::before {
   content: "";
