@@ -7,8 +7,11 @@
 
     <!-- googleフォント -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
     <!-- swiper カルーセル -->
     <!-- SwiperのCSS -->
@@ -22,7 +25,7 @@
   <body>
 
     <header>
-      <div class="header-container">
+      <div id="header-container" class="header-container">
         <div class="logo">
           <a href="#">
             <p>NorthJpanTourism</p>
@@ -40,8 +43,8 @@
           <ul>
             <li><a href="#">ホーム</a></li>
             <li><a href="#">ツアー</a></li>
-            <li><a href="#">コラム</a></li>
-            <li><a href="#">ガイド</a></li>
+            <li><a href="#">綴る。</a></li>
+            <li><a href="#">ガイド紹介 </a></li>
             <li><a href="#">Language</a></li>
           </ul>
         </nav>
@@ -59,55 +62,67 @@
             <img src="./image/top_hirosakijo.webp" alt="スライド2">
           </div>
         </div>
-        <div class="swiper-button-prev"></div>
-        <div class="swiper-button-next"></div>
         <div class="swiper-scrollbar"></div>
       </div>
       <section class="tour">
-        <h2>ツアー一覧</h2>
+        <h2>Tours</h2>
         <div class="swiper tour-swiper">
           <div class="swiper-wrapper">
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー1">
               <h3>ツアー1</h3>
               <p>青森の歴史を巡るツアー</p>
-              <a href="tour-detail.html?id=1">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=1">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー2">
               <h3>ツアー2</h3>
               <p>十和田湖の自然を満喫するツアー</p>
-              <a href="tour-detail.html?id=2">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=2">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー3">
               <h3>ツアー3</h3>
               <p>ねぶた祭りを体験するツアー</p>
-              <a href="tour-detail.html?id=3">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=3">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー4">
               <h3>ツアー4</h3>
               <p>津軽三味線ライブツアー</p>
-              <a href="tour-detail.html?id=4">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=4">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー5">
               <h3>ツアー5</h3>
               <p>弘前城の桜ツアー</p>
-              <a href="tour-detail.html?id=5">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=5">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー6">
               <h3>ツアー6</h3>
               <p>八甲田山スノーハイキング</p>
-              <a href="tour-detail.html?id=6">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=6">詳細を見る</a>
+              </div>
             </div>
             <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー7">
               <h3>ツアー7</h3>
               <p>白神山地トレッキング</p>
-              <a href="tour-detail.html?id=7">詳細を見る</a>
+              <div class="button1">
+                <a href="tour-detail.html?id=7">詳細を見る</a>
+              </div>
             </div>
             <!-- <div class="swiper-slide">
               <img src="./image/top_hirosakijo.webp" alt="ツアー8">
@@ -116,21 +131,98 @@
               <a href="tour-detail.html?id=8">詳細を見る</a>
             </div> -->
           </div>
-          <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev"></div>
-          <div class="swiper-button-next"></div>
+          <div class="swiper-scrollbar"></div>
         </div>
-        
       </section>
 
-      <section class="access">
-        <h2>アクセス</h2>
+      <section class="map">
+        <h2>地域から探す</h2>
+        <img src="./image/tizu_aomori.png" alt="aomori">
       </section>
+
+      <section class="column">
+        <h2>綴る。</h2>
+        <div class="column_contents">
+          <img src="./image/column_juni.webp" alt="juuniko">
+          <div class="column_texts">
+            <h3 class="gradient-text">━━神秘の青に魅せられて</h3>
+            <h4 class="subtitle">青く輝く神秘の池、十二湖。その魅力に迫る。</h4>
+            <div class="author">
+              <p>2025年3月1日</p>
+              <p>山田太郎</p>
+            </div>
+            <div class="column-read">
+              <p class="read-button">
+                <span class="fas fa-angle-double-right"></span>
+                Read
+                <span class="span-bar"></span>
+                </p>
+              <div class="bar"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="guide">
+        <h2>ガイド紹介</h2>
+        <div class="profile-list">
+          <div class="profile-item">
+            <img src="./image/man2.jpg" alt="Profile 1">
+            <div class="profile-text">
+              <h3>山田 太郎</h3>
+              <p>青森県の観光ガイド歴10年。地域の歴史と自然について詳しくご案内します。</p>
+            </div>
+          </div>
+          
+          <div class="profile-item">
+            <img src="./image/woman2.jpg" alt="Profile 2">
+            <div class="profile-text">
+              <h3>佐藤 花子</h3>
+              <p>ねぶた祭りのスペシャリスト。伝統文化の魅力をお伝えします。</p>
+            </div>
+          </div>
+        
+          <div class="profile-item">
+            <img src="./image/man3.jpg" alt="Profile 3">
+            <div class="profile-text">
+              <h3>田中 一郎</h3>
+              <p>奥入瀬渓流の魅力をガイド。自然を愛する方にぴったりのツアーをご案内します。</p>
+            </div>
+          </div>
+        
+          <div class="profile-item">
+            <img src="./image/woman4.jpg" alt="Profile 4">
+            <div class="profile-text">
+              <h3>鈴木 さくら</h3>
+              <p>地元グルメと温泉案内が得意。青森の魅力を存分に楽しみましょう！</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
     </main>
 
     <footer>
-      <p>&copy; 2025 NorthJpanTourism | All Rights Reserved</p>
-    </footer>
+      <nav class="footer-nav">
+        <a href="#">ホーム</a>
+        <a href="#">ツアー一覧</a>
+        <a href="#">ガイド紹介</a>
+        <a href="#">コラム一覧</a>
+        <a href="#">アクセス</a>
+        <a href="#">お問い合わせ</a>
+        <a href="#">このサイトについて</a>
+      </nav>
+      
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    
+      <p class="copyright">© 2025 North Japan Tourism | All Rights Reserved.</p>
+
+    </footer>    
     
     <script src="js/main.js"></script>
   </body>

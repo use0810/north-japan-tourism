@@ -1,11 +1,19 @@
 // ========================
 // 共通設定（変数定義）
 // ========================
+
+//  カラーパレット
+$main-color: #2E8B57;  // シーフォームグリーン
+$sub-color: #F5F5DC;   // ベージュ
+$point-color: #FF8C00; // ダークオレンジ
+
 $card-gap: 15px;
 $card-radius: 10px;
 $card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 $primary-color: #007bff;
 $primary-hover: #0056b3;
+
+
 
 // ========================
 // レスポンシブミックスイン
@@ -27,7 +35,11 @@ $primary-hover: #0056b3;
 // ========================
 body {
   font-size: 1rem;
-  
+	font-family: "Quicksand", "Noto Sans JP", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+  overflow-x: hidden;
   @include responsive(tablet) {
     font-size: 1rem;
   }
@@ -39,24 +51,87 @@ body {
   }
 }
 
+h2 {
+	padding: 60px 0;
+	text-align: center;
+	@include responsive(tablet) {
+		padding: 100px 0;
+  }
+}
+
+.swiper-scrollbar {
+	height: 9px;
+  background: rgba(255, 255, 255, 0.3); 
+	border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+	&:hover {
+		background: rgba(255, 255, 255, 0.6); 
+	}
+}
+
+//汎用ボタン１
+.button1 a{
+	background: #eee;
+	border-radius: 3px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 220px;
+	padding: 10px 25px;
+	color: #313131;
+	transition: 0.3s ease-in-out;
+	font-weight: 600;
+	box-shadow: 5px 5px 0 $main-color;
+	border-radius: 50px;
+}
+.button1 a:hover {
+	background-color: #66ff8f;
+	box-shadow: 0 0 0;
+	transform: translate(5px, 5px);
+}
+.button1 a:after {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transition: 0.2s ease-in-out;
+	content: "\f0da";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	transform: translateY(-50%);
+}
+
+// swiper 基本設定
+.swiper-scrollbar-drag {
+  background: linear-gradient(90deg, $point-color, #ddd);
+  border-radius: 30px; 
+}
+
+
+
 // ========================
 // ヘッダー
 // ========================
 .header-container {
-  position: absolute;
-  z-index: 10;
+  position: fixed;
+  z-index: 100;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-between;
   padding: 20px;
+	background-color: transparent;
+	transition: background-color 2s ease;
+	&.scrolled {
+		background-color: rgba(0, 0, 0, 0.2);
+	}
 }
 
 // ========================
 // ロゴ
 // ========================
 .logo {
-  font-family: "Quicksand", serif;
   font-size: 1rem;
   font-weight: bold;
   color: white;
@@ -118,7 +193,6 @@ $ham-height: 36px;
   width: 250px;
   height: 100%;
   color: white;
-
   background-color: #333;
   padding-top: 60px;
   transform: translateX(100%);
@@ -153,11 +227,30 @@ $ham-height: 36px;
       margin: 0;
       li {
         a {
-          padding: 10px;
-          &:hover {
-            background: rgba(61, 61, 61, 0.4);
-          }
-        }
+					padding: 10px;
+					position: relative; // ✅ 背景画像のために追加
+	
+					// ✅ 背景画像のアニメーション
+					&::before {
+						content: "";
+						position: absolute;
+						top: 0;
+						left: 0;
+						width: 100%;
+						height: 100%;
+						background-image: url("../image/drower-bg.png");
+						background-size: contain;
+						background-repeat: no-repeat;
+						background-position: center;
+						opacity: 0; // 初期は非表示
+						transition: opacity 1.2s ease-in-out; // ✅ ゆっくりフェードイン
+						z-index: -1; // ✅ 背景として配置
+					}
+	
+					&:hover::before {
+						opacity: 1; // ✅ ホバー時にふわっと表示
+					}
+				}
       }
     }
   }
@@ -170,7 +263,6 @@ $ham-height: 36px;
   width: 100%;
   height: 80vh;
   overflow: hidden;
-
   .swiper-wrapper {
     display: flex;
     
@@ -196,20 +288,27 @@ $ham-height: 36px;
 // ========================
 
 .tour {
-	h2 {
-		margin: 50px 0;
-		text-align: center;
-	}
+	position: relative;
+  background-image: url("../image/back1.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center; 
+  background-attachment: fixed;
 }
 .tour-swiper {
-	height: 500px;
+	height: 1000px;
 	width: 90%;
-	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 	padding: 5px;
+	overflow: visible;
+	padding-bottom: 40px;
 	.swiper-slide{
 		transition: transform 0.3s ease-in-out;
 		display: flex; 
     flex-direction: column; 
+		justify-content: space-between;
+		border-radius: 12px;
+		box-shadow: 0 4px 8px #e6e6e6; 
+		padding-bottom: 30px;
 		&:hover {
       transform: scale(1.05);
     }
@@ -220,39 +319,288 @@ $ham-height: 36px;
 			border-radius: 10px 10px 0 0;
 		}
 		h3 {
+			min-height: 30px; // 🔹 タイトルの高さを統一
 			font-size: 1.2rem;
 			margin: 10px 0;
 			color: #333;
 		}
 		p {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 10px;
+			flex-grow: 1; 
+			font-size: 0.9rem;
+			color: #666;
+			margin-bottom: 10px;
+			line-height: 1.6; // 🔹 行間の調整
+			overflow: hidden;
+			display: -webkit-box;
+			-webkit-line-clamp: 5; // 🔹 5行まで表示
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis; // 🔹 省略記号（...）を表示
     }
-		a {
-			margin-top: auto;
-			display: inline-block;
-			padding: 10px 15px;
-			background-color: #007bff;
-      color: white;
-			border-radius: 5px;
-      transition: background 0.3s ease-in-out;
-      font-size: 0.9rem;
-      font-weight: bold;
-			&:hover {
-        background-color: #0056b3;
-      }
+		.button1 {
+			margin-top: auto; // 🔹 ボタンを最下部に配置
+			width: 90%;
+			margin: 0 auto;
+			a{
+				width: auto; // 🔹 ボタンの幅を内容に合わせる
+    		max-width: 100%;
+			}
 		}
 	}
 }
 
+// ========================
+// 地図（マップ）セクション
+// ========================
+
+.map {
+	img {
+		width: 100%;
+	}
+}
 
 
 // ========================
-// アクセスセクション
+// コラムセクション
 // ========================
-.access {
+
+// フェードアニメーション付きのバーを作る Mixin（長さ変更可能）
+@mixin fading-bar($width, $delay) {
+  width: $width;
+  height: 2px;
+  background: linear-gradient(to right, black, black, transparent, black, black);
+  background-size: 200% 100%;
+  animation: fade-flow 3s infinite linear;
+	animation-delay: $delay;
+}
+@keyframes fade-flow {
+  0% { background-position: 0% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.column_contents {
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+	img {
+		width: 100%;
+	}
+	.column_texts {
+		margin: 0 auto;
+		padding: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		h3 {
+			flex-grow: 0; // 上部に配置
+		}
+		h4 {
+			flex-grow: 1;
+			vertical-align: center;
+			padding: 20px;
+		}
+		.author {
+			flex-grow: 0; // 下部固定
+			align-self: flex-end;
+		}
+		.column-read {
+			border-radius: 12px;
+			box-shadow: 4px 0 8px -2px #e6e6e6;
+			padding: 10px;
+			margin-top: 10px;
+			background: linear-gradient(to right, transparent, rgb(237, 237, 237));
+			transition: transform 0.3s ease-in-out;
+			&:hover {
+				transform: scale(1.05);
+			}
+			.read-button {
+				display: flex;
+				justify-content: flex-end; 
+				align-items: center; 
+				gap: 30px;
+				.span-bar {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-between;
+					gap: 10px;
+					&::before {
+						content: "";
+						display: inline-block;
+						@include fading-bar(100px, .5s);
+						flex-shrink: 0;
+					}
+					&::after {
+						content: "";
+						display: inline-block;
+						align-self: flex-end;
+						@include fading-bar(30px, 1s);
+						flex-shrink: 0;
+					}
+				}
+			}
+		}
+		.bar {
+			@include fading-bar(100%, 2s);
+		}
+	}
+
+  @include responsive(tablet) {
+    flex-direction: row;
+		text-align: center;
+		img {
+			width: 50%;
+		}
+  }
+}
+
+
+// ========================
+// ガイドのスタイル
+// ========================
+
+.guide {
+	margin-top: 150px;
+	position: relative; 
+	background-image: url("../image/guide_back.jpg"); // ✅ 背景画像を設定
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  border-top-left-radius: 100px; // 左上の角を丸く
+  border-top-right-radius: 20px; // 右上の角を丸く
+  overflow: hidden; // ✅ 子要素がはみ出さないように
+
+	&::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(54, 54, 54, 0.7); // ✅ ここを調整（0.2 = 少し暗め）
+    z-index: 1; // ✅ 背景より前に出るように
+  }
+	> * {
+    position: relative;
+    z-index: 2; // ✅ 全ての直下の子要素を前面に出す
+  }
+	h2 {
+		color: white;
+		padding: 30px 0 50px;
+	}
+}
+
+.profile-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  background-color: lightgray;
+  max-width: 800px;
+  margin: 0 auto;
+	padding: 30px;
+}
+
+.profile-item {
+  display: flex;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+
+  img {
+    width: 30%; // 左側の30%を画像エリアに
+    max-width: 100px; // 最大サイズを制限
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .profile-text {
+    flex: 1; // 残りの70%をテキストエリアに
+    padding-left: 15px;
+
+    h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #666;
+    }
+  }
+}
+
+
+// ========================
+// フッターのスタイル
+// ========================
+footer {
+  background: $main-color;
+  color: $sub-color;
+  padding: 30px 15px;
   text-align: center;
+  font-size: 14px;
+	margin-top: 40px;
+}
+
+// フッターナビゲーション（スマホ用：縦並び）
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+
+  a {
+    color: $sub-color;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    transition: color 0.3s, background 0.3s;
+
+    &:hover {
+      color: $point-color;
+      background: rgba(255, 255, 255, 0.1);
+    }
+  }
+}
+
+// SNSアイコン（スマホで中央配置）
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+
+  a {
+    color: $sub-color;
+    font-size: 22px;
+    transition: color 0.3s;
+
+    &:hover {
+      color: $point-color;
+    }
+  }
+}
+
+// 著作権表示（小さめに調整）
+.copyright {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+// 📌 PC表示時の調整（幅が広いときだけ適用）
+@include responsive(pc) {
+  .footer-nav {
+    flex-direction: row; // PCでは横並び
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .footer-nav a {
+    padding: 8px 15px;
+  }
 }

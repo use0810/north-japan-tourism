@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+
+	window.addEventListener('scroll', function() {
+		const header = document.getElementById('header-container');
+		// スクロール位置が50pxより大きい場合にクラスを追加（値は好みに合わせて調整）
+		if (window.scrollY > 200) {
+			header.classList.add('scrolled');
+		} else {
+			header.classList.remove('scrolled');
+		}
+	});
+	
+
 	const hamburger = document.getElementById("hamburger");
 	const drawerMenu = document.getElementById("drawerMenu");
 
@@ -15,14 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			delay: 3000,
 			disableOnInteraction: false,
 		},
-		pagination: {
-			el: '.hero-swiper .swiper-pagination',
-			clickable: true,
-		},
-		navigation: {
-			nextEl: '.hero-swiper .swiper-button-next',
-			prevEl: '.hero-swiper .swiper-button-prev',
-		},
 		scrollbar: {
 			el: '.hero-swiper .swiper-scrollbar',
 		},
@@ -31,18 +35,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	const tourSwiper = new Swiper('.tour-swiper', {
 		slidesPerView: 2,
-		spaceBetween: 10,
+		spaceBetween: 0,
 		grid: {
       rows: 2,
     },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
+		scrollbar: {
+			el: '.swiper-scrollbar',
+		},
 		breakpoints: {
 			320: { // スマホ（2×2）
 				slidesPerView: 2, 
@@ -61,5 +60,4 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		}
   });
-
 });
