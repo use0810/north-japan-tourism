@@ -33,6 +33,9 @@ $primary-hover: #0056b3;
 // ========================
 // 全体のスタイル
 // ========================
+html {
+	overflow-x: hidden;
+}
 body {
   font-size: 1rem;
 	font-family: "Quicksand", "Noto Sans JP", sans-serif;
@@ -332,6 +335,7 @@ $ham-height: 36px;
 			line-height: 1.6; // 🔹 行間の調整
 			overflow: hidden;
 			display: -webkit-box;
+			line-clamp: 5;
 			-webkit-line-clamp: 5; // 🔹 5行まで表示
 			-webkit-box-orient: vertical;
 			text-overflow: ellipsis; // 🔹 省略記号（...）を表示
@@ -354,7 +358,10 @@ $ham-height: 36px;
 
 .map {
 	img {
-		width: 100%;
+
+		width: 100%; 
+		max-width: 100%;
+		display: block;
 	}
 }
 
