@@ -278,8 +278,10 @@ h2 {
   font-size: 1.2rem;
   margin: 10px 0;
   color: #333;
+  padding-left: 20px;
 }
 .tour-swiper .swiper-slide p {
+  padding-left: 20px;
   flex-grow: 1;
   font-size: 0.9rem;
   color: #666;

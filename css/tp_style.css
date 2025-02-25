@@ -1,0 +1,12 @@
+.tp-container {
+  display: flex;
+}
+.tp-container .tp-title-text {
+  flex: 1;
+}
+.tp-container .tp-swiper {
+  flex: 1;
+}
+.tp-container .tp-swiper img {
+  width: 100%;
+}/*# sourceMappingURL=tp_style.css.map */

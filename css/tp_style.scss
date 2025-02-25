@@ -1,0 +1,15 @@
+// ツアー詳細ページのスタイル
+
+
+.tp-container {
+ display: flex;
+ .tp-title-text {
+  flex:1;
+ }
+ .tp-swiper {
+  flex:1;
+  img {
+   width: 100%;
+  }
+ }
+}

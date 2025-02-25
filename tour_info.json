@@ -1,0 +1,23 @@
+[
+ {
+   "id": "1",
+   "title": "ツアー1のタイトル",
+   "text": "ツアー1の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "instruction": "ツアー1の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour1-main.jpg",
+     "gallery": ["tour1-1.jpg", "tour1-2.jpg"]
+   }
+ },
+ {
+   "id": "2",
+   "title": "ツアー2のタイトル",
+   "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour2-main.jpg",
+     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
+   }
+ }
+]
+ 
