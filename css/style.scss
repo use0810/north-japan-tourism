@@ -1,5 +1,6 @@
 @import 'common';
 @import 'header';
+@import 'footer';
 
 // ========================
 // ヒーローイメージ
@@ -67,10 +68,13 @@
 		}
 		h3 {
 			min-height: 30px; // 🔹 タイトルの高さを統一
-			font-size: 1.2rem;
+			font-size: 1rem;
 			margin: 10px 0;
 			color: #333;
       padding-left: 20px;
+      @include responsive(tablet) {
+        font-size: 1.2rem;
+      }
 		}
 		p {
       padding-left: 20px;
@@ -328,6 +332,7 @@
   .profile-text {
     flex: 1; // 残りの70%をテキストエリアに
     padding-left: 15px;
+    width: 50%;
 
     h3 {
       font-size: 1.2rem;
@@ -340,78 +345,49 @@
       color: #666;
     }
   }
-}
 
-
-// ========================
-// フッターのスタイル
-// ========================
-footer {
-  background: $main-color;
-  color: $sub-color;
-  padding: 30px 15px;
-  text-align: center;
-  font-size: 14px;
-}
-
-// フッターナビゲーション（スマホ用：縦並び）
-.footer-nav {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  list-style: none;
-  padding: 0;
-
-  a {
-    color: $sub-color;
-    text-decoration: none;
-    font-weight: bold;
-    padding: 12px;
-    border-radius: 5px;
-    transition: color 0.3s, background 0.3s;
-
-    &:hover {
-      color: $point-color;
-      background: rgba(255, 255, 255, 0.1);
+  .prof-button {
+    width: 20%;
+    background: none;
+    position: relative; // a要素の絶対位置を基準にするために相対位置に
+    text-align: center;
+  
+    a {
+      display: inline-block; // inline-blockでaタグをインラインブロックに変更
+      display: flex;
+      margin: 0 auto;
+      color: white;
+      justify-content: center; // 水平方向に中央配置
+      align-items: center; // 垂直方向に中央配置
+      width: 60%;
+      background: none;
+      border-radius: 50%;
+      aspect-ratio: 1; // 幅と高さを同じにする
+      box-shadow: none;
+      background-color: $main-color;
+      padding: 20px;
+      position: relative; // a内でアイコンを絶対配置できるようにする
+  
+      &:hover {
+        background: none;
+        box-shadow: 0 0 0;
+        transform: translate(0px, 0px);
+      }
+  
+      &::after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%); // 中央に配置するために変換
+        font-size: 20px;
+        content: "\f101"; // Font Awesome アイコン
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+      }
     }
   }
+  
 }
 
-// SNSアイコン（スマホで中央配置）
-.social-icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-top: 20px;
 
-  a {
-    color: $sub-color;
-    font-size: 22px;
-    transition: color 0.3s;
-
-    &:hover {
-      color: $point-color;
-    }
-  }
-}
-
-// 著作権表示（小さめに調整）
-.copyright {
-  font-size: 12px;
-  opacity: 0.8;
-  margin-top: 20px;
-}
-
-// 📌 PC表示時の調整（幅が広いときだけ適用）
-@include responsive(pc) {
-  .footer-nav {
-    flex-direction: row; // PCでは横並び
-    justify-content: center;
-    gap: 20px;
-  }
-
-  .footer-nav a {
-    padding: 8px 15px;
-  }
-}
 

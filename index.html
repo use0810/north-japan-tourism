@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <!-- my JS -->
+    <script src="js/common.js" defer></script>
     <script src="js/main.js" defer></script>
   </head>
   <body>
@@ -44,13 +45,12 @@
         <nav class="drawer-menu" id="drawerMenu">
           <ul>
             <li><a href="#">ホーム</a></li>
-            <li><a href="#">ツアー</a></li>
-            <li><a href="#">綴る。</a></li>
-            <li><a href="#">ガイド紹介 </a></li>
-            <li><a href="#">Language</a></li>
+            <li><a href="tours.html">ツアー</a></li>
+            <li><a href="columns.html">綴る。</a></li>
+            <li><a href="guides.html">ガイド紹介 </a></li>
+            <li><a href="javascript:void(0)">Language</a></li>
           </ul>
         </nav>
-
       </div>
       
     </header>
@@ -83,7 +83,7 @@
               <h3>ツアー2</h3>
               <p>十和田湖の自然を満喫するツアー</p>
               <div class="button1">
-                <a href="tour-detail.html?id=2">詳細を見る</a>
+                <a href="tour_detail.html?id=2">詳細を見る</a>
               </div>
             </div>
             <div class="swiper-slide">
@@ -91,7 +91,7 @@
               <h3>ツアー3</h3>
               <p>ねぶた祭りを体験するツアー</p>
               <div class="button1">
-                <a href="tour-detail.html?id=3">詳細を見る</a>
+                <a href="tour_detail.html?id=3">詳細を見る</a>
               </div>
             </div>
             <div class="swiper-slide">
@@ -99,7 +99,7 @@
               <h3>ツアー4</h3>
               <p>津軽三味線ライブツアー</p>
               <div class="button1">
-                <a href="tour-detail.html?id=4">詳細を見る</a>
+                <a href="tour_detail.html?id=4">詳細を見る</a>
               </div>
             </div>
             <div class="swiper-slide">
@@ -107,7 +107,7 @@
               <h3>ツアー5</h3>
               <p>弘前城の桜ツアー</p>
               <div class="button1">
-                <a href="tour-detail.html?id=5">詳細を見る</a>
+                <a href="tour_detail.html?id=5">詳細を見る</a>
               </div>
             </div>
             <div class="swiper-slide">
@@ -115,7 +115,7 @@
               <h3>ツアー6</h3>
               <p>八甲田山スノーハイキング</p>
               <div class="button1">
-                <a href="tour-detail.html?id=6">詳細を見る</a>
+                <a href="tour_detail.html?id=6">詳細を見る</a>
               </div>
             </div>
             <div class="swiper-slide">
@@ -123,7 +123,7 @@
               <h3>ツアー7</h3>
               <p>白神山地トレッキング</p>
               <div class="button1">
-                <a href="tour-detail.html?id=7">詳細を見る</a>
+                <a href="tour_detail.html?id=7">詳細を見る</a>
               </div>
             </div>
           </div>
@@ -143,9 +143,9 @@
           
           <object id="aomoriMap" type="image/svg+xml" data="./image/aomori-map.svg"></object>
         </div>
-        <div id="hidden-content" class= "" style="display: none;">
+        <!-- <div id="hidden-content" class= "" style="display: none;">
           //////
-        </div>
+        </div> -->
 
       </section>
 
@@ -205,6 +205,9 @@
               <h3>鈴木 さくら</h3>
               <p>地元グルメと温泉案内が得意。青森の魅力を存分に楽しみましょう！</p>
             </div>
+            <div class="prof-button">
+              <a href="guide_detail.html?id=4"></a>
+            </div>
           </div>
         </div>
       </section>
@@ -213,13 +216,13 @@
 
     <footer>
       <nav class="footer-nav">
-        <a href="#">ホーム</a>
-        <a href="#">ツアー一覧</a>
-        <a href="#">ガイド紹介</a>
-        <a href="#">コラム一覧</a>
-        <a href="#">アクセス</a>
-        <a href="#">お問い合わせ</a>
-        <a href="#">このサイトについて</a>
+        <a href="index.html">ホーム</a>
+        <a href="tours.html">ツアー一覧</a>
+        <a href="guides.html">ガイド紹介</a>
+        <a href="columns.html">「綴る。」一覧</a>
+        <a href="access.html">アクセス</a>
+        <a href="contact.html">お問い合わせ</a>
+        <a href="company.html">このサイトについて</a>
       </nav>
       
       <div class="social-icons">

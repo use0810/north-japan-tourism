@@ -1,0 +1,42 @@
+[
+ {
+   "id": "1",
+   "name": "山田 太郎",
+   "text": "十和田ヨガツアーについて。ここにツアーの概要や魅力が記載する。",
+   "instruction": "ツアー1の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour1-main.jpg",
+     "gallery": ["./image/tour_yoga1.JPG", "./image/tour_yoga2.JPG", "./image/tour_yoga3.JPG", "./image/tour_yoga4.JPG"]
+   }
+ },
+ {
+   "id": "2",
+   "name": "佐藤 花子",
+   "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour2-main.jpg",
+     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
+   }
+ },
+ {
+   "id": "3",
+   "name": "田中 一郎",
+   "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour2-main.jpg",
+     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
+   }
+ },
+ {
+   "id": "4",
+   "name": "鈴木 さくら",
+   "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
+   "images": {
+     "main": "tour2-main.jpg",
+     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
+   }
+ }
+]

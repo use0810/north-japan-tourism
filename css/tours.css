@@ -86,6 +86,20 @@ h2 {
   border-radius: 30px;
 }
 
+.pankuzu {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5px 20px;
+  margin-top: 70px;
+  border-radius: 30px; /* 丸にする */
+  background-color: white; /* 背景を白に */
+}
+@media (min-width: 768px) {
+  .pankuzu {
+    margin-top: 100px;
+  }
+}
+
 .header-container {
   position: fixed;
   z-index: 100;
@@ -216,8 +230,77 @@ h2 {
   }
 }
 
+footer {
+  background: #2E8B57;
+  color: #F5F5DC;
+  padding: 30px 15px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  padding: 0;
+}
+.footer-nav a {
+  color: #F5F5DC;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 12px;
+  border-radius: 5px;
+  transition: color 0.3s, background 0.3s;
+}
+.footer-nav a:hover {
+  color: #FF8C00;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+.social-icons a {
+  color: #F5F5DC;
+  font-size: 22px;
+  transition: color 0.3s;
+}
+.social-icons a:hover {
+  color: #FF8C00;
+}
+
+.copyright {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-top: 20px;
+}
+
+@media (min-width: 1024px) {
+  .footer-nav {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+  }
+  .footer-nav a {
+    padding: 8px 15px;
+  }
+}
+.hamburger.active span:nth-of-type(1) {
+  background-color: white;
+}
+.hamburger.active span:nth-of-type(3) {
+  background-color: white;
+}
+
 .drawer-menu {
   color: black;
+}
+.drawer-menu.open {
+  color: white;
 }
 
 .logo {
@@ -226,75 +309,4 @@ h2 {
 
 .hamburger span {
   background-color: black;
-}
-
-.pankuzu {
-  width: 90%;
-  margin: 0 auto;
-  padding: 5px 20px;
-  margin-top: 70px;
-  border-radius: 30px; /* 丸にする */
-  background-color: white; /* 背景を白に */
-}
-@media (min-width: 768px) {
-  .pankuzu {
-    margin-top: 100px;
-  }
-}
-
-.tp-container {
-  width: 90%;
-  margin: 0 auto;
-  margin-top: 40px;
-  border-radius: 20px;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .tp-container {
-    margin-top: 80px;
-    background-color: white;
-    padding: 30px;
-  }
-}
-.tp-container .tp-upper {
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 768px) {
-  .tp-container .tp-upper {
-    flex-direction: row;
-  }
-}
-.tp-container .tp-title-text {
-  order: 1;
-  padding: 30px;
-  border-radius: 20px;
-  background-color: white;
-}
-@media (min-width: 768px) {
-  .tp-container .tp-title-text {
-    flex: 1;
-    padding: 0px;
-  }
-  .tp-container .tp-title-text #tr-text {
-    padding: 20px;
-  }
-}
-.tp-container .tp-swiper {
-  flex: 1;
-  order: -1;
-  width: 100%;
-  border-top-left-radius: 100px;
-  border-top-right-radius: 20px;
-}
-@media (min-width: 768px) {
-  .tp-container .tp-swiper {
-    order: 2;
-  }
-}
-.tp-container .tp-swiper .swiper-slide img {
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}/*# sourceMappingURL=tp_style.css.map */
+}/*# sourceMappingURL=tours.css.map */

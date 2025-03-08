@@ -1,0 +1,71 @@
+// ========================
+// フッターのスタイル
+// ========================
+footer {
+ background: $main-color;
+ color: $sub-color;
+ padding: 30px 15px;
+ text-align: center;
+ font-size: 14px;
+}
+
+// フッターナビゲーション（スマホ用：縦並び）
+.footer-nav {
+ display: flex;
+ flex-direction: column;
+ gap: 12px;
+ list-style: none;
+ padding: 0;
+
+ a {
+   color: $sub-color;
+   text-decoration: none;
+   font-weight: bold;
+   padding: 12px;
+   border-radius: 5px;
+   transition: color 0.3s, background 0.3s;
+
+   &:hover {
+     color: $point-color;
+     background: rgba(255, 255, 255, 0.1);
+   }
+ }
+}
+
+// SNSアイコン（スマホで中央配置）
+.social-icons {
+ display: flex;
+ justify-content: center;
+ gap: 15px;
+ margin-top: 20px;
+
+ a {
+   color: $sub-color;
+   font-size: 22px;
+   transition: color 0.3s;
+
+   &:hover {
+     color: $point-color;
+   }
+ }
+}
+
+// 著作権表示（小さめに調整）
+.copyright {
+ font-size: 12px;
+ opacity: 0.8;
+ margin-top: 20px;
+}
+
+// 📌 PC表示時の調整（幅が広いときだけ適用）
+@include responsive(pc) {
+ .footer-nav {
+   flex-direction: row; // PCでは横並び
+   justify-content: center;
+   gap: 20px;
+ }
+
+ .footer-nav a {
+   padding: 8px 15px;
+ }
+}

@@ -1,9 +1,20 @@
 @import 'common';
 @import 'header';
+@import 'footer';
 
 
+.hamburger {
+  &.active {
+    span:nth-of-type(1) { background-color: white; }
+
+    span:nth-of-type(3) { background-color: white;}
+  }
+}
 .drawer-menu {
  color: black;
+ &.open {
+  color: white;
+}
 }
 .logo {
  color: black;
@@ -11,18 +22,6 @@
 .hamburger { 
  span {
    background-color: black;
- }
-}
-
-.pankuzu {
- width: 90%;
- margin: 0 auto;
- padding: 5px 20px;
- margin-top: 70px;
- border-radius: 30px; /* 丸にする */
- background-color: white; /* 背景を白に */
- @include responsive(tablet) {
-  margin-top: 100px;
  }
 }
 
@@ -80,4 +79,42 @@
    }
   }
  }
+
+ .tp-middle {
+  .tp-access-map {
+    background-color: white;
+    text-align: center;
+    height: 300px;
+    padding: 30px;
+    border-radius: 30px; 
+  }
+ }
+
+ .tp-lower {
+  .tp-guide {
+    background-color: white;
+    text-align: center;
+    height: 300px;
+    padding: 30px;
+    border-radius: 30px; 
+    margin-bottom: 20px;
+  }
+ }
 }
+
+.button1 {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 200px;
+  a {
+    text-align: center;
+    background: linear-gradient(135deg, #ff8f66,#FF8C00);
+    box-shadow: 5px 5px 0 #c36b00,;
+    &:hover{
+      background: linear-gradient(135deg, #FF8C00, #ff8f66);
+      color: white;
+    }
+  }
+}
+
