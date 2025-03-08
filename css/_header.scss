@@ -1,0 +1,148 @@
+// ========================
+// ヘッダー
+// ========================
+.header-container {
+ position: fixed;
+ z-index: 100;
+ display: flex;
+ width: 100%;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px;
+ background-color: transparent;
+ transition: background-color 2s ease;
+ &.scrolled {
+  background-color: rgba(0, 0, 0, 0.2);
+ }
+}
+
+// ========================
+// ロゴ
+// ========================
+.logo {
+ font-size: 1.3rem;
+ font-weight: bold;
+ color: white;
+ @include responsive(tablet) {
+   font-size: 1.5rem;
+ }
+}
+
+// ========================
+// ハンバーガーメニュー
+// ========================
+@mixin transform($y, $rotate) {
+ transform: translateY($y) rotate($rotate);
+}
+
+$ham-gap: 14px; 
+$ham-width: 40px; 
+$ham-height: 36px; 
+
+.hamburger {
+ position: fixed;
+ top: 15px;
+ right: 15px;
+ cursor: pointer;
+ z-index: 2;
+ width: $ham-width;
+ height: $ham-height;
+ 
+ span {
+   position: absolute;
+   left: 0;
+   width: 100%;
+   height: 3px;
+   background-color: white;
+   border-radius: 3px;
+   transition: all 0.5s;
+ }
+
+ span:nth-of-type(1) { top: 0; }
+ span:nth-of-type(2) { top: $ham-gap; }
+ span:nth-of-type(3) { top: $ham-gap * 2; }
+
+ &.active {
+   span:nth-of-type(1) { @include transform($ham-gap, 45deg); }
+   span:nth-of-type(2) { opacity: 0; }
+   span:nth-of-type(3) { @include transform(-$ham-gap, -45deg); }
+ }
+
+ @include responsive(tablet) {
+   display: none;
+ }
+}
+
+// ========================
+// ドロワーメニュー
+// ========================
+.drawer-menu {
+ position: fixed;
+ z-index: 1;
+ top: 0;
+ right: 0;
+ width: 250px;
+ height: 100%;
+ color: white;
+ background-color: #333;
+ padding-top: 60px;
+ transform: translateX(100%);
+ transition: transform 0.3s ease-in-out;
+
+ &.open {
+   transform: translateX(0);
+ }
+
+ ul {
+   margin: 10px 0;
+   li {
+     a {
+       display: block;
+       width: 100%;
+       padding: 15px;
+     }
+   }
+ }
+
+ @include responsive(tablet) {
+   position: static;
+   display: flex;
+   justify-content: flex-end;
+   width: auto;
+   padding-top: 0;
+   background-color: transparent;
+   transform: translateX(0);
+
+   ul {
+     display: flex;
+     margin: 0;
+     li {
+       a {
+    padding: 10px;
+    position: relative; // ✅ 背景画像のために追加
+
+    // ✅ 背景画像のアニメーション
+    &::before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background-image: url("../image/drower-bg.png");
+     background-size: contain;
+     background-repeat: no-repeat;
+     background-position: center;
+     opacity: 0; // 初期は非表示
+     transition: opacity 1.2s ease-in-out; // ✅ ゆっくりフェードイン
+     z-index: -1; // ✅ 背景として配置
+    }
+
+    &:hover::before {
+     opacity: 1; // ✅ ホバー時にふわっと表示
+    }
+   }
+     }
+   }
+ }
+}

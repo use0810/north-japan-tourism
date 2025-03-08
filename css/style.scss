@@ -1,266 +1,5 @@
-// ========================
-// 共通設定（変数定義）
-// ========================
-
-//  カラーパレット
-$main-color: #2E8B57;  // シーフォームグリーン
-$sub-color: #F5F5DC;   // ベージュ
-$point-color: #FF8C00; // ダークオレンジ
-
-$card-gap: 15px;
-$card-radius: 10px;
-$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-$primary-color: #007bff;
-$primary-hover: #0056b3;
-
-
-
-// ========================
-// レスポンシブミックスイン
-// ========================
-@mixin responsive($size) {
-  @if $size == tablet {
-    @media (min-width: 768px) { @content; }
-  }
-  @else if $size == pc {
-    @media (min-width: 1024px) { @content; }
-  }
-  @else if $size == large {
-    @media (min-width: 1440px) { @content; }
-  }
-}
-
-// ========================
-// 全体のスタイル
-// ========================
-html {
-	overflow-x: hidden;
-}
-body {
-  font-size: 1rem;
-	font-family: "Quicksand", "Noto Sans JP", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
-  overflow-x: hidden;
-  @include responsive(tablet) {
-    font-size: 1rem;
-  }
-  @include responsive(pc) {
-    font-size: 1.2rem;
-  }
-  @include responsive(large) {
-    font-size: 1.3rem;
-  }
-}
-
-h2 {
-	padding: 60px 0;
-	text-align: center;
-	@include responsive(tablet) {
-		padding: 100px 0;
-  }
-}
-
-.swiper-scrollbar {
-	height: 9px;
-  background: rgba(255, 255, 255, 0.3); 
-	border-radius: 10px;
-  transition: background 0.3s ease-in-out;
-	&:hover {
-		background: rgba(255, 255, 255, 0.6); 
-	}
-}
-
-//汎用ボタン１
-.button1 a{
-	background: #eee;
-	border-radius: 3px;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	margin: 0 auto;
-	max-width: 220px;
-	padding: 10px 25px;
-	color: #313131;
-	transition: 0.3s ease-in-out;
-	font-weight: 600;
-	box-shadow: 5px 5px 0 $main-color;
-	border-radius: 50px;
-}
-.button1 a:hover {
-	background-color: #66ff8f;
-	box-shadow: 0 0 0;
-	transform: translate(5px, 5px);
-}
-.button1 a:after {
-	position: absolute;
-	top: 50%;
-	right: 20px;
-	transition: 0.2s ease-in-out;
-	content: "\f0da";
-	font-family: "Font Awesome 5 Free";
-	font-weight: 900;
-	transform: translateY(-50%);
-}
-
-// swiper 基本設定
-.swiper-scrollbar-drag {
-  background: linear-gradient(90deg, $point-color, #ddd);
-  border-radius: 30px; 
-}
-
-
-
-// ========================
-// ヘッダー
-// ========================
-.header-container {
-  position: fixed;
-  z-index: 100;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-	background-color: transparent;
-	transition: background-color 2s ease;
-	&.scrolled {
-		background-color: rgba(0, 0, 0, 0.2);
-	}
-}
-
-// ========================
-// ロゴ
-// ========================
-.logo {
-  font-size: 1.3rem;
-  font-weight: bold;
-  color: white;
-	@include responsive(tablet) {
-    font-size: 1.5rem;
-  }
-}
-
-// ========================
-// ハンバーガーメニュー
-// ========================
-@mixin transform($y, $rotate) {
-  transform: translateY($y) rotate($rotate);
-}
-
-$ham-gap: 14px; 
-$ham-width: 40px; 
-$ham-height: 36px; 
-
-.hamburger {
-  position: fixed;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  z-index: 2;
-  width: $ham-width;
-  height: $ham-height;
-  
-  span {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    background-color: white;
-    border-radius: 3px;
-    transition: all 0.5s;
-  }
-
-  span:nth-of-type(1) { top: 0; }
-  span:nth-of-type(2) { top: $ham-gap; }
-  span:nth-of-type(3) { top: $ham-gap * 2; }
-
-  &.active {
-    span:nth-of-type(1) { @include transform($ham-gap, 45deg); }
-    span:nth-of-type(2) { opacity: 0; }
-    span:nth-of-type(3) { @include transform(-$ham-gap, -45deg); }
-  }
-
-  @include responsive(tablet) {
-    display: none;
-  }
-}
-
-// ========================
-// ドロワーメニュー
-// ========================
-.drawer-menu {
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  right: 0;
-  width: 250px;
-  height: 100%;
-  color: white;
-  background-color: #333;
-  padding-top: 60px;
-  transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
-
-  &.open {
-    transform: translateX(0);
-  }
-
-  ul {
-    margin: 10px 0;
-    li {
-      a {
-        display: block;
-        width: 100%;
-        padding: 15px;
-      }
-    }
-  }
-
-  @include responsive(tablet) {
-    position: static;
-    display: flex;
-    justify-content: flex-end;
-    width: auto;
-    padding-top: 0;
-    background-color: transparent;
-    transform: translateX(0);
-
-    ul {
-      display: flex;
-      margin: 0;
-      li {
-        a {
-					padding: 10px;
-					position: relative; // ✅ 背景画像のために追加
-	
-					// ✅ 背景画像のアニメーション
-					&::before {
-						content: "";
-						position: absolute;
-						top: 0;
-						left: 0;
-						width: 100%;
-						height: 100%;
-						background-image: url("../image/drower-bg.png");
-						background-size: contain;
-						background-repeat: no-repeat;
-						background-position: center;
-						opacity: 0; // 初期は非表示
-						transition: opacity 1.2s ease-in-out; // ✅ ゆっくりフェードイン
-						z-index: -1; // ✅ 背景として配置
-					}
-	
-					&:hover::before {
-						opacity: 1; // ✅ ホバー時にふわっと表示
-					}
-				}
-      }
-    }
-  }
-}
+@import 'common';
+@import 'header';
 
 // ========================
 // ヒーローイメージ
@@ -295,6 +34,7 @@ $ham-height: 36px;
 
 .tour {
 	position: relative;
+  background-color: #eeefea;
   background-image: url("../image/back1.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -315,6 +55,7 @@ $ham-height: 36px;
 		border-radius: 12px;
 		box-shadow: 0 4px 8px #e6e6e6; 
 		padding-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
 		&:hover {
       transform: scale(1.05);
     }
@@ -362,12 +103,67 @@ $ham-height: 36px;
 // ========================
 
 .map {
-	img {
 
-		width: 100%; 
-		max-width: 100%;
-		display: block;
-	}
+  .svg-wrap {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+
+    border-radius: 50%; /* 丸にする */
+    background-color: white; /* 背景を白に */
+    position: relative;
+    .map-text {
+      position: absolute;
+      font-size: 5vw;
+      font-weight: bold;
+      transition: transform 0.2s ease-in;
+      transform-origin: center;
+      user-select: none; /* 文字選択を禁止 */
+      -webkit-user-select: none; /* Safari用 */
+      -moz-user-select: none; /* Firefox用 */
+      -ms-user-select: none; /* 旧IE用 */
+      pointer-events: none;
+      // color: rgb(245, 245, 245);
+      color: rgb(247, 247, 247);
+      text-shadow:
+      -1px -1px 0 rgba(163, 163, 163, 0.7),
+      4px 4px 0 rgba(163, 163, 163, 0.7),
+      6px 6px 2px rgba(186, 186, 186, 0.4);
+      &.hovered {
+        transform: scale(1.2);
+      }
+    }
+    .mt-shimokita {
+      top: 15%;
+      right: 31%;
+      // writing-mode: vertical-rl;
+    }
+    .mt-kamikita {
+      top: 52%;
+      right: 25%;
+      writing-mode: vertical-rl;
+    }
+    .mt-sanpachi {
+      top: 73%;
+      right: 18%;
+      // writing-mode: vertical-rl;
+    }
+    .mt-tousei {
+      top: 53%;
+      right: 44%;
+      // writing-mode: vertical-rl;
+    }
+    .mt-seihoku {
+      top: 44%;
+      right: 60%;
+      writing-mode: vertical-rl;
+    }
+    .mt-chunan {
+      top: 65%;
+      right: 56%;
+      // writing-mode: vertical-rl;
+    }
+  }
 }
 
 
@@ -556,7 +352,6 @@ footer {
   padding: 30px 15px;
   text-align: center;
   font-size: 14px;
-	margin-top: 40px;
 }
 
 // フッターナビゲーション（スマホ用：縦並び）

@@ -1,0 +1,122 @@
+// ========================
+// 共通設定（変数定義）
+// ========================
+
+//  カラーパレット
+$main-color: #2E8B57;  // シーフォームグリーン
+$sub-color: #F5F5DC;   // ベージュ
+$point-color: #FF8C00; // ダークオレンジ
+
+// ブレークポイントのサイズ
+$bp-tablet: 768px;
+$bp-pc: 1024px;
+$bp-pcLarge: 768px;
+
+// マージンパディングなどの共通設定
+$midashi-pd-phone: 60px 0;
+$midashi-pd-tablet: 100px 0;
+
+// ========================
+// レスポンシブミックスイン
+// ========================
+@mixin responsive($size) {
+  @if $size == tablet {
+    @media (min-width: $bp-tablet) { @content; }
+  }
+  @else if $size == pc {
+    @media (min-width: $bp-pc) { @content; }
+  }
+  @else if $size == pc-large {
+    @media (min-width: $bp-pcLarge) { @content; }
+  }
+}
+
+// ========================
+// 全体のスタイル
+// ========================
+html {
+	overflow-x: hidden;
+}
+body {
+	font-size: 1rem;
+	font-family: "Quicksand", "Noto Sans JP", sans-serif;
+	font-optical-sizing: auto;
+	font-weight: normal;
+	font-style: normal;
+	background-color: #eeefea;
+	overflow-x: hidden;
+	@include responsive(tablet) {
+			font-size: 1rem;
+	}
+	@include responsive(pc) {
+			font-size: 1.2rem;
+	}
+	@include responsive(large) {
+			font-size: 1.3rem;
+	}
+}
+
+h2 {
+	padding: $midashi-pd-phone;
+	text-align: center;
+	@include responsive(tablet) {
+		padding: $midashi-pd-tablet;
+  }
+}
+
+.swiper-scrollbar {
+	height: 9px;
+  background: rgba(255, 255, 255, 0.3); 
+	border-radius: 10px;
+  transition: background 0.3s ease-in-out;
+	&:hover {
+		background: rgba(255, 255, 255, 0.6); 
+	}
+}
+
+//汎用ボタン１
+.button1 a{
+	// background: #eee;
+	background: url('../image/button-back1.png') no-repeat center center;
+	background-size: cover;
+	border-radius: 50px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	max-width: 220px;
+	padding: 10px 25px;
+	color: white;
+	transition: 0.3s ease-in-out;
+	font-weight: 600;
+	box-shadow: 5px 5px 0 $main-color;
+}
+.button1 a:hover {
+	// background-color: #66ff8f;
+	color: $main-color;
+	background-image: url('../image/button-back2.jpg');
+	background-size: cover;      /* 画像をボタン全体にフィットさせる */
+	background-position: center; /* 中央揃え */
+	background-repeat: no-repeat;/* 繰り返さない */
+	box-shadow: 0 0 0;
+	transform: translate(5px, 5px);
+}
+
+.button1 a:after {
+	position: absolute;
+	top: 50%;
+	right: 20px;
+	transition: 0.2s ease-in-out;
+	content: "\f0da";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	transform: translateY(-50%);
+}
+
+// swiper 基本設定
+.swiper-scrollbar-drag {
+  background: linear-gradient(90deg, transparent, white, $point-color, white, transparent);
+  border-radius: 30px; 
+}
+

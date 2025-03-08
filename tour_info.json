@@ -1,12 +1,12 @@
 [
  {
    "id": "1",
-   "title": "ツアー1のタイトル",
-   "text": "ツアー1の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
+   "title": "十和田ヨガツアー",
+   "text": "十和田ヨガツアーについて。ここにツアーの概要や魅力が記載する。",
    "instruction": "ツアー1の案内文です。集合場所、時間などの詳細情報。",
    "images": {
      "main": "tour1-main.jpg",
-     "gallery": ["tour1-1.jpg", "tour1-2.jpg"]
+     "gallery": ["./image/tour_yoga1.JPG", "./image/tour_yoga2.JPG", "./image/tour_yoga3.JPG", "./image/tour_yoga4.JPG"]
    }
  },
  {
@@ -20,4 +20,3 @@
    }
  }
 ]
- 

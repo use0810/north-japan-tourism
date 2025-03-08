@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html {
   overflow-x: hidden;
 }
@@ -8,6 +9,7 @@ body {
   font-optical-sizing: auto;
   font-weight: normal;
   font-style: normal;
+  background-color: #eeefea;
   overflow-x: hidden;
 }
 @media (min-width: 768px) {
@@ -18,11 +20,6 @@ body {
 @media (min-width: 1024px) {
   body {
     font-size: 1.2rem;
-  }
-}
-@media (min-width: 1440px) {
-  body {
-    font-size: 1.3rem;
   }
 }
 
@@ -47,8 +44,9 @@ h2 {
 }
 
 .button1 a {
-  background: #eee;
-  border-radius: 3px;
+  background: url("../image/button-back1.png") no-repeat center center;
+  background-size: cover;
+  border-radius: 50px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -56,15 +54,18 @@ h2 {
   margin: 0 auto;
   max-width: 220px;
   padding: 10px 25px;
-  color: #313131;
+  color: white;
   transition: 0.3s ease-in-out;
   font-weight: 600;
   box-shadow: 5px 5px 0 #2E8B57;
-  border-radius: 50px;
 }
 
 .button1 a:hover {
-  background-color: #66ff8f;
+  color: #2E8B57;
+  background-image: url("../image/button-back2.jpg");
+  background-size: cover; /* 画像をボタン全体にフィットさせる */
+  background-position: center; /* 中央揃え */
+  background-repeat: no-repeat; /* 繰り返さない */
   box-shadow: 0 0 0;
   transform: translate(5px, 5px);
 }
@@ -81,7 +82,7 @@ h2 {
 }
 
 .swiper-scrollbar-drag {
-  background: linear-gradient(90deg, #FF8C00, #ddd);
+  background: linear-gradient(90deg, transparent, white, #FF8C00, white, transparent);
   border-radius: 30px;
 }
 
@@ -240,6 +241,7 @@ h2 {
 
 .tour {
   position: relative;
+  background-color: #eeefea;
   background-image: url("../image/back1.svg");
   background-repeat: no-repeat;
   background-size: contain;
@@ -262,6 +264,7 @@ h2 {
   border-radius: 12px;
   box-shadow: 0 4px 8px #e6e6e6;
   padding-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .tour-swiper .swiper-slide:hover {
   transform: scale(1.05);
@@ -304,10 +307,56 @@ h2 {
   max-width: 100%;
 }
 
-.map img {
-  width: 100%;
-  max-width: 100%;
-  display: block;
+.map .svg-wrap {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  border-radius: 50%; /* 丸にする */
+  background-color: white; /* 背景を白に */
+  position: relative;
+}
+.map .svg-wrap .map-text {
+  position: absolute;
+  font-size: 5vw;
+  font-weight: bold;
+  transition: transform 0.2s ease-in;
+  transform-origin: center;
+  user-select: none; /* 文字選択を禁止 */
+  -webkit-user-select: none; /* Safari用 */
+  -moz-user-select: none; /* Firefox用 */
+  -ms-user-select: none; /* 旧IE用 */
+  pointer-events: none;
+  color: rgb(247, 247, 247);
+  text-shadow: -1px -1px 0 rgba(163, 163, 163, 0.7), 4px 4px 0 rgba(163, 163, 163, 0.7), 6px 6px 2px rgba(186, 186, 186, 0.4);
+}
+.map .svg-wrap .map-text.hovered {
+  transform: scale(1.2);
+}
+.map .svg-wrap .mt-shimokita {
+  top: 15%;
+  right: 31%;
+}
+.map .svg-wrap .mt-kamikita {
+  top: 52%;
+  right: 25%;
+  writing-mode: vertical-rl;
+}
+.map .svg-wrap .mt-sanpachi {
+  top: 73%;
+  right: 18%;
+}
+.map .svg-wrap .mt-tousei {
+  top: 53%;
+  right: 44%;
+}
+.map .svg-wrap .mt-seihoku {
+  top: 44%;
+  right: 60%;
+  writing-mode: vertical-rl;
+}
+.map .svg-wrap .mt-chunan {
+  top: 65%;
+  right: 56%;
 }
 
 @keyframes fade-flow {
@@ -489,7 +538,6 @@ footer {
   padding: 30px 15px;
   text-align: center;
   font-size: 14px;
-  margin-top: 40px;
 }
 
 .footer-nav {

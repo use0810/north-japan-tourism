@@ -1,15 +1,83 @@
+@import 'common';
+@import 'header';
+
+
+.drawer-menu {
+ color: black;
+}
+.logo {
+ color: black;
+}
+.hamburger { 
+ span {
+   background-color: black;
+ }
+}
+
+.pankuzu {
+ width: 90%;
+ margin: 0 auto;
+ padding: 5px 20px;
+ margin-top: 70px;
+ border-radius: 30px; /* 丸にする */
+ background-color: white; /* 背景を白に */
+ @include responsive(tablet) {
+  margin-top: 100px;
+ }
+}
+
 // ツアー詳細ページのスタイル
 
-
 .tp-container {
+ width: 90%;
+ margin: 0 auto;
+ margin-top: 40px;
+ border-radius: 20px;
  display: flex;
+ flex-direction: column;
+ @include responsive(tablet) {
+    margin-top: 80px;
+    background-color: white;
+    // flex-direction: row;
+    padding: 30px;
+  }
+
+ .tp-upper {
+  display: flex;
+  flex-direction: column;
+  @include responsive(tablet) {
+    flex-direction: row;
+  }
+ }
+
  .tp-title-text {
-  flex:1;
+  order: 1;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: white;
+  @include responsive(tablet) {
+    flex:1;
+    padding: 0px;
+    #tr-text {
+      padding: 20px;
+    }
+  }
  }
  .tp-swiper {
   flex:1;
-  img {
-   width: 100%;
+  order: -1;
+  width: 100%;
+  border-top-left-radius: 100px; // 左上の角を丸く
+  border-top-right-radius: 20px; // 右上の角を丸く
+  @include responsive(tablet) {
+    order: 2;
+  }
+  .swiper-slide {
+
+   img {
+    width: 100%;
+    object-fit: cover;
+   }
   }
  }
 }

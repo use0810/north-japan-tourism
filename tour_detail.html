@@ -21,38 +21,70 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/tp_style.css">
+				 <!-- my JS -->
+				<script src="js/tour_detail.js" defer></script>
   </head>
   <body>
-		<haader>
+		 <header>
+				<div id="header-container" class="header-container">
+						<div class="logo">
+								<a href="#">
+										<p>NorthJpanTourism</p>
+								</a>
+						</div>
+						<!-- ハンバーガーメニューのボタン -->
+						<div class="hamburger" id="hamburger">
+								<span></span>
+								<span></span>
+								<span></span>
+						</div>
 
-		</haader>
-		<main>
-			<section class="tp-container">
-				<div class="tp-title-text">
-					<h1 id="tr-title">タイトル</h1>
-					<p id="tr-text">説明文</p>
+						<!-- ドロワーメニュー -->
+						<nav class="drawer-menu" id="drawerMenu">
+								<ul>
+										<li><a href="#">ホーム</a></li>
+										<li><a href="#">ツアー</a></li>
+										<li><a href="#">綴る。</a></li>
+										<li><a href="#">ガイド紹介 </a></li>
+										<li><a href="#">Language</a></li>
+								</ul>
+						</nav>
+
 				</div>
-				<div class="swiper tp-swiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<img src="./image/tour_yoga1.JPG" alt="スライド1">
-						</div>
-						<div class="swiper-slide">
-							<img src="./image/tour_yoga2.JPG" alt="スライド2">
-						</div>
-						<div class="swiper-slide">
-							<img src="./image/tour_yoga3.JPG" alt="スライド3">
-						</div>
-					</div>
-					<div class="swiper-scrollbar"></div>
-				</div>
+
 				
+		</header>
+		<main>
+			<section class="pankuzu">
+				<a href="index.html" style="text-decoration: underline; color:gray">ホーム</a>
+				<span> ></span>
+				<span class="pan-title" id="pan-title">タイトル</span>
 			</section>
-
+			<section class="tp-container">
+				<div class="tp-upper">
+					<div class="tp-title-text">
+						<h1 id="tr-title">タイトル</h1>
+						<p id="tr-text">説明文</p>
+					</div>
+					<div class="swiper tp-swiper">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<img src="./image/tour_yoga1.JPG" alt="スライド1">
+							</div>
+							<div class="swiper-slide">
+								<img src="./image/tour_yoga2.JPG" alt="スライド2">
+							</div>
+							<div class="swiper-slide">
+								<img src="./image/tour_yoga3.JPG" alt="スライド3">
+							</div>
+						</div>
+						<div class="swiper-scrollbar"></div>
+					</div>
+				</div>
+			</section>
 		</main>
 		<footer>
 
 		</footer>
-		<script src="./js/tour_detail.js"></script>
   </body>
 </html>
