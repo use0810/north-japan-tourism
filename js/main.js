@@ -82,6 +82,15 @@ async function initSvgInteraction() {
             throw new Error("SVG内に <path> 要素が見つかりません。");
         }
 
+								// SVGの高さを取得して、hidden-contentの高さを調整
+        const svgWrap = document.querySelector('.svg-wrap');
+        const hiddenContent = document.getElementById('.hidden-content');
+
+        if (svgWrap && hiddenContent) {
+            const svgWrapHeight = svgWrap.offsetHeight;
+            hiddenContent.style.height = svgWrapHeight + 'px';
+        }
+
         // `path` 要素を取得してイベントを追加
         paths.forEach((path, index) => {
 												const correspondingParagraph = paragraphs[index];
@@ -98,7 +107,11 @@ async function initSvgInteraction() {
 
             // クリックで隠れていた要素を表示
             path.addEventListener("click", () => {
-                document.getElementById("hidden-content").style.display = "block";
+													const content = document.getElementById('hidden-content');
+													content.style.display = 'flex'; // 要素を表示
+													setTimeout(() => {
+															content.classList.add('show'); // スライドインのクラスを追加
+													}, 10); 
             });
         });
 
@@ -109,3 +122,12 @@ async function initSvgInteraction() {
 
 // 初期化
 initSvgInteraction();
+
+// 閉じる処理
+function closeContent() {
+	const content = document.getElementById('hidden-content');
+	content.classList.remove('show'); // スライドアウト
+	setTimeout(() => {
+			content.style.display = 'none'; // 要素を非表示にする
+	}, 500); // アニメーションが終わるまで待機
+}

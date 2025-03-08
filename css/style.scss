@@ -107,7 +107,7 @@
 // ========================
 
 .map {
-
+  position: relative;
   .svg-wrap {
     margin: 0 auto;
     width: 90%;
@@ -170,6 +170,38 @@
   }
 }
 
+/* スライドインする内容のスタイル */
+.hidden-content {
+  position: absolute; /* スクロールに影響されず画面に固定 */
+  top: 0;
+  right: -100%; /* 初期位置：右側に隠れている状態 */
+  width: 100%; /* 画面幅いっぱい */
+  height: 100%; /* 高さは動的に設定 */
+  background-color: rgba(0, 0, 0, 0.8); /* 半透明の黒背景 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: right 0.5s ease-in-out; /* スライドインのアニメーション */
+  z-index: 100;
+}
+
+/* スライドイン後の状態 */
+.hidden-content.show {
+  display: flex;
+  right: 0; /* 画面内にスライドイン */
+}
+
+/* 閉じるボタン（バツ）のスタイル */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
 
 // ========================
 // コラムセクション
