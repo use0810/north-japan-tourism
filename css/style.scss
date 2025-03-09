@@ -383,42 +383,29 @@
     background: none;
     position: relative; // a要素の絶対位置を基準にするために相対位置に
     text-align: center;
-  
+    
     a {
-      display: inline-block; // inline-blockでaタグをインラインブロックに変更
       display: flex;
-      margin: 0 auto;
-      color: white;
       justify-content: center; // 水平方向に中央配置
       align-items: center; // 垂直方向に中央配置
       width: 60%;
-      background: none;
-      border-radius: 50%;
-      aspect-ratio: 1; // 幅と高さを同じにする
-      box-shadow: none;
+      height: 60%;
       background-color: $main-color;
+      border-radius: 50%;
+      margin: 0 auto;
+      color: white;
+      aspect-ratio: 1; // 幅と高さを同じにする
       padding: 20px;
-      position: relative; // a内でアイコンを絶対配置できるようにする
-  
-      &:hover {
-        background: none;
-        box-shadow: 0 0 0;
-        transform: translate(0px, 0px);
-      }
   
       &::after {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%); // 中央に配置するために変換
         font-size: 20px;
-        content: "\f101"; // Font Awesome アイコン
+        content: "\f0da";; // Font Awesome アイコン
         font-family: "Font Awesome 5 Free";
         font-weight: 900;
       }
     }
   }
-  
+
 }
 
 

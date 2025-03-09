@@ -23,3 +23,88 @@ span {
   background-color: black;
 }
 }
+
+
+
+.introduce-container {
+  padding: 30px 0;
+  h2 {
+    display: none;
+  }
+
+  .introduce {
+    position: relative;
+    width: 80%;
+    height: 400px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 40px;
+    .image-container {
+      position: absolute;
+      bottom: 0;    // 左下に配置
+      left: 0;      // 左端に配置
+      width: 100px;
+      height: 100px;
+  
+      .guide-image {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 50%;  // 画像を丸くする
+      }
+    }
+
+    #next-button {
+      position: absolute;
+      bottom: 20px;    // 左下に配置
+      right:20px;      // 左端に配置
+      width: 70px;
+      height: 50px;
+      border-radius: 50%;
+      display: none;  /* 横並びに配置 */
+      align-items: center;  /* アイコンとテキストを縦方向に中央揃え */
+      justify-content: center; /* 中央寄せ */
+      &::after{
+        content: "\f0da"; /* Font Awesome の右向き矢印 */
+        font-family: "Font Awesome 5 Free";
+        font-weight: 900;
+        margin-left: 8px;  /* アイコンとテキストの間にスペースを追加 */
+        font-size: 1rem;
+      }
+    }
+  
+  
+    .text-container {
+      display: flex;  // Flexboxを使って中央配置
+      flex-direction: column;
+      justify-content: fkex-start;
+
+      height: 100%;
+      width: 100%;
+      padding: 10px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 20px;
+      color: #333;
+      overflow: hidden;
+      padding: 20px;
+  
+    }
+
+    /* テキストの流れるアニメーション */
+    @keyframes slide-out {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .slide-out {
+      animation: slide-out 0.5s forwards;
+    }
+      
+  }
+
+}

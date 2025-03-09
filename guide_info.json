@@ -4,39 +4,31 @@
    "name": "山田 太郎",
    "text": "十和田ヨガツアーについて。ここにツアーの概要や魅力が記載する。",
    "instruction": "ツアー1の案内文です。集合場所、時間などの詳細情報。",
-   "images": {
-     "main": "tour1-main.jpg",
-     "gallery": ["./image/tour_yoga1.JPG", "./image/tour_yoga2.JPG", "./image/tour_yoga3.JPG", "./image/tour_yoga4.JPG"]
-   }
+   "image": "image/man2.jpg"
  },
  {
    "id": "2",
    "name": "佐藤 花子",
    "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
    "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
-   "images": {
-     "main": "tour2-main.jpg",
-     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
-   }
+   "image": "image/woman2.jpg"
  },
  {
    "id": "3",
    "name": "田中 一郎",
    "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
    "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
-   "images": {
-     "main": "tour2-main.jpg",
-     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
-   }
+   "image": "image/man3.jpg"
  },
  {
    "id": "4",
    "name": "鈴木 さくら",
-   "text": "ツアー2の詳細テキストです。ここにツアーの概要や魅力が記載されます。",
-   "instruction": "ツアー2の案内文です。集合場所、時間などの詳細情報。",
-   "images": {
-     "main": "tour2-main.jpg",
-     "gallery": ["tour2-1.jpg", "tour2-2.jpg"]
-   }
- }
+
+   "texts": [
+    "初めまして！\n観光ガイドの鈴木さくらです。\n\n青森で生まれ育ち、\n地元のグルメや温泉をこよなく愛しています！",
+
+    "特に、青森の新鮮な海産物や、\n四季折々の美しい景色を楽しむ温泉は最高なんですよ！\n\n観光地だけじゃなく、地元の人たちと触れ合いながら、青森の魅力を存分に味わっていただけたら嬉しいです。"
+  ],
+   "image": "image/woman4.jpg"
+  }
 ]
