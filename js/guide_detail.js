@@ -52,8 +52,13 @@ function displayGuideImage(guide) {
 
 function displayTitle(guide) {
   const titleElem = document.getElementById('tour-title');
+  const panElem = document.getElementById('pan-title');
+  
   if (titleElem && guide.tour) {
     titleElem.textContent = guide.tour
+  }
+  if (panElem && guide.name) {
+    panElem.textContent = guide.name
   }
 }
 
