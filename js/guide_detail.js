@@ -20,6 +20,7 @@ async function loadGuideDetails() {
     }
 
     displayGuideImage(guide);
+    displayTitle(guide);
     setupNextButton(guide.texts);
     await displayGuideText(guide.texts);
   } catch (error) {
@@ -46,6 +47,13 @@ function displayGuideImage(guide) {
   if (imageElem && guide.image) {
     imageElem.src = guide.image;
     imageElem.alt = guide.name;
+  }
+}
+
+function displayTitle(guide) {
+  const titleElem = document.getElementById('tour-title');
+  if (titleElem && guide.tour) {
+    titleElem.textContent = guide.tour
   }
 }
 
@@ -105,3 +113,32 @@ function setupNextButton(texts) {
 }
 
 loadGuideDetails();
+
+
+const tourSwiper = new Swiper('.tour-swiper', {
+  slidesPerView: 2,
+  spaceBetween: 0,
+  grid: {
+    rows: 2,
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  breakpoints: {
+    320: { // スマホ（2×2）
+      slidesPerView: 1, 
+      grid: { rows: 2 }, 
+      spaceBetween: 10,
+    },
+    768: { // タブレット（3×2）
+      slidesPerView: 2, 
+      grid: { rows: 2 }, 
+      spaceBetween: 20, 
+    },
+    1024: { // PC（3×2）
+      slidesPerView: 2,
+      grid: { rows: 2 },
+      spaceBetween: 30, // 
+    }
+  }
+});

@@ -319,7 +319,7 @@ footer {
 }
 .introduce-container .introduce {
   position: relative;
-  width: 80%;
+  width: 90%;
   height: 400px;
   text-align: center;
   margin: 0 auto;
@@ -382,4 +382,71 @@ footer {
 }
 .introduce-container .introduce .slide-out {
   animation: slide-out 0.5s forwards;
+}
+
+.tour {
+  position: relative;
+}
+
+.tour-swiper {
+  height: 1000px;
+  width: 90%;
+  padding: 5px;
+  overflow: visible;
+  padding-bottom: 40px;
+}
+.tour-swiper .swiper-slide {
+  transition: transform 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px #e6e6e6;
+  padding-bottom: 30px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.tour-swiper .swiper-slide:hover {
+  transform: scale(1.05);
+}
+.tour-swiper .swiper-slide img {
+  height: 40%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+.tour-swiper .swiper-slide h3 {
+  min-height: 30px;
+  font-size: 1rem;
+  margin: 10px 0;
+  color: #333;
+  padding-left: 20px;
+}
+@media (min-width: 768px) {
+  .tour-swiper .swiper-slide h3 {
+    font-size: 1.2rem;
+  }
+}
+.tour-swiper .swiper-slide p {
+  padding-left: 20px;
+  flex-grow: 1;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 10px;
+  line-height: 1.6;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 5;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+}
+.tour-swiper .swiper-slide .button1 {
+  margin-top: auto;
+  width: 90%;
+  margin: 0 auto;
+}
+.tour-swiper .swiper-slide .button1 a {
+  width: auto;
+  max-width: 100%;
 }/*# sourceMappingURL=guide_detail.css.map */

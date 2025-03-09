@@ -34,7 +34,7 @@ span {
 
   .introduce {
     position: relative;
-    width: 80%;
+    width: 90%;
     height: 400px;
     text-align: center;
     margin: 0 auto;
@@ -107,4 +107,78 @@ span {
       
   }
 
+}
+
+
+// ========================
+// ツアーカルーセル
+// ========================
+
+.tour {
+	position: relative;
+  // background-color: #eeefea;
+  // background-image: url("../image/back1.svg");
+  // background-repeat: no-repeat;
+  // background-size: contain;
+  // background-position: center; 
+  // background-attachment: fixed;
+}
+.tour-swiper {
+	height: 1000px;
+	width: 90%;
+	padding: 5px;
+	overflow: visible;
+	padding-bottom: 40px;
+	.swiper-slide{
+		transition: transform 0.3s ease-in-out;
+		display: flex; 
+    flex-direction: column; 
+		justify-content: space-between;
+		border-radius: 12px;
+		box-shadow: 0 4px 8px #e6e6e6; 
+		padding-bottom: 30px;
+    background-color: rgba(255, 255, 255, 0.4);
+		&:hover {
+      transform: scale(1.05);
+    }
+		img {
+			height: 40%;
+			width: 100%;
+			object-fit: cover;
+			border-radius: 10px 10px 0 0;
+		}
+		h3 {
+			min-height: 30px; // 🔹 タイトルの高さを統一
+			font-size: 1rem;
+			margin: 10px 0;
+			color: #333;
+      padding-left: 20px;
+      @include responsive(tablet) {
+        font-size: 1.2rem;
+      }
+		}
+		p {
+      padding-left: 20px;
+			flex-grow: 1; 
+			font-size: 0.9rem;
+			color: #666;
+			margin-bottom: 10px;
+			line-height: 1.6; // 🔹 行間の調整
+			overflow: hidden;
+			display: -webkit-box;
+			line-clamp: 5;
+			-webkit-line-clamp: 5; // 🔹 5行まで表示
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis; // 🔹 省略記号（...）を表示
+    }
+		.button1 {
+			margin-top: auto; // 🔹 ボタンを最下部に配置
+			width: 90%;
+			margin: 0 auto;
+			a{
+				width: auto; // 🔹 ボタンの幅を内容に合わせる
+    		max-width: 100%;
+			}
+		}
+	}
 }
